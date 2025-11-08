@@ -1,10 +1,10 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
-RUN apt-get update -y \
-    && apt-get install -y php8.3 php8.3-cli
+RUN apt update -y \
+    && apt install -y python3
 
 WORKDIR /app
 
-COPY hello.php ./
+COPY hello.py ./
 
-CMD ["php", "hello.php"]
+CMD python3 hello.py
